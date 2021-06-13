@@ -7,7 +7,7 @@ An fun way to escape LD_PRELOAD sandboxes
 
 An interesting thing this test also points out is that preloaded modules can have their constructors redefined by the binary they are preloaded into, if the symbols match.
 
-To run the test, run `make run`
+To see it go, do `make run`:
 ```sh
 gcc -fPIE -pie -o main_norm main.c
 gcc -o modelf modelf.c
