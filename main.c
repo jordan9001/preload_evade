@@ -2,7 +2,7 @@
 
 unsigned int la_version(unsigned int current)
 {
-    litwrite("MAIN_AUDIT_VER");
+    litwrite("main.c: la_version");
     return current;
 }
 
@@ -10,11 +10,11 @@ int main(int argc, char* argv[])
 {
     (void)argc;
     (void)argv;
-    litwrite("MAIN");
+    litwrite("main.c: main");
 }
 
 __attribute__((constructor))
 void init(void)
 {
-    litwrite("MAIN_INIT");
+    litwrite("main.c: init");
 }

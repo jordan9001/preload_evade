@@ -13,9 +13,8 @@ main_audit: main.c write.h modelf
 	$(CC) $(CFLAGS) -fPIC -pie -Wl,--audit,./$@,-E -o $@ $<
 	./modelf $@
 
-main_tamper: main.c write.h modelf
-	$(CC) $(CFLAGS) -fPIC -pie -Wl,-E -o $@ $<
-	./modelf $@
+main_tamper: main.c write.h
+	$(CC) $(CFLAGS) -fPIE -pie -Wl,-E -o $@ $<
 
 pld.so: preload.c write.h
 	$(CC) $(CFLAGS) -fPIC -shared -o $@ $<
@@ -34,6 +33,6 @@ run: all
 
 .PHONY: clean
 clean:
-	rm -f main
+	rm -f main_*
 	rm -f pld.so
 	rm -f modelf
