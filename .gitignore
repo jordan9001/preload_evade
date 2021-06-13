@@ -1,0 +1,7 @@
+*.swp
+.gdb_history
+main_audit
+main_norm
+main_tamper
+modelf
+*.so
