@@ -10,7 +10,7 @@ main_norm: main.c write.h
 	$(CC) $(CFLAGS) -fPIE -pie -o $@ $<
 
 main_audit: main.c write.h modelf
-	$(CC) $(CFLAGS) -fPIC -pie -Wl,--audit,./$@,-E -o $@ $<
+	$(CC) $(CFLAGS) -fPIE -pie -Wl,--audit,./$@,-E -o $@ $<
 	./modelf $@
 
 main_tamper: main.c write.h
