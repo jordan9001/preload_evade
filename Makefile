@@ -6,7 +6,6 @@ CFLAGS=-Wall -Wextra -Werror -g
 all: main_norm main_audit main_tamper pld.so
 
 main_norm: main.c write.h
-	# Need a DYN binary that doesn't have pie flag set but has an entry?
 	$(CC) $(CFLAGS) -fPIE -pie -o $@ $<
 
 main_audit: main.c write.h modelf
